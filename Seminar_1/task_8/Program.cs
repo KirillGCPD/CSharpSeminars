@@ -8,9 +8,9 @@ var number=Convert.ToInt32(Console.ReadLine());
 
 for (int i = 2; i <= number; i+=2)
 {
-    if (i!=2)
+    if (i!=2) //Перед первым числом нам не следует ставить знак ", "
     {
-        System.Console.Write(", ");
+        System.Console.Write(", "); 
     }
     System.Console.Write(i);
 }
