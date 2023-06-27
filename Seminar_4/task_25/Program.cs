@@ -25,8 +25,7 @@ double Power(double number, int power)
     return result;
 }
 
+//ОСНОВНОЙ КОД
 var numberA=ReadDouble("Введите первое число: ");
 var pow=ReadInt("Введите степень: ");
-
-
 Console.WriteLine($"Результат возведения {numberA} в степень {pow} равен: {Power(numberA,pow)}");
