@@ -26,11 +26,11 @@ double [,] GenerateRandomArray(int m, int n,int min,int max)
     }
     return result;
 }
-
+//Вывести массив
 void PrintArray (double[,] array)
 {
-    int m=array.GetUpperBound(0)+1; //количество строк (M)
-    int n=array.GetUpperBound(1)+1;
+    int m=array.GetLength(0); //количество строк (M)
+    int n=array.GetLength(1);
     for (int i=0;i<m;i++)
     {
        if (i!=0) 
