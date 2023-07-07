@@ -1,9 +1,11 @@
-﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
-// m = 3, n = 4.
-// 0,5 7 -2 -0,2
-// 1 -3,3 8 -9,9
-// 8 7,8 -7,1 9
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 17 -> такого числа в массиве нет
+//Генерация двухмерного массива размерность M*N, случайными вещественным числами в диапазоне от min до max
 
 //Генерация случайного числа в диапазоне
 double GenerateDouble(int min, int max)
@@ -39,13 +41,24 @@ void PrintArray (double[,] array)
        }
         for (int k=0;k<n;k++)
         {
-            Console.Write(Math.Round(array[i,k],2)+"\t");
+            Console.Write(Math.Round(array[i,k],1)+"\t");
         }
     }
 }
-Console.Write("Введите количество строк: ");
+Console.WriteLine("Сгенерирован массив:");
+var array=GenerateRandomArray(5,7,-10,10);
+PrintArray(array);
+Console.WriteLine();
+Console.Write("Введите строку (нумерация с 1): ");
 int m= Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите количество столбцов: ");
+Console.Write("Введите столбец (нумерация с 1): ");
 int n= Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Генерация массива: ");
-PrintArray(GenerateRandomArray(m,n,-10,10));
+
+if (m<1||n<1||m>array.GetLength(0)||n>array.GetLength(1))
+{
+    Console.WriteLine("Такого элемента в массиве нет");
+}
+else
+{
+    Console.WriteLine($"Элемент в позиции [{m},{n}] равен {Math.Round(array[m-1,n-1],1)}");
+}
