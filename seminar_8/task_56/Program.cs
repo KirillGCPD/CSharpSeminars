@@ -70,5 +70,5 @@ var array=GenerateRandomArray(5,5,-10,10); //Квадратная матрица
 Console.WriteLine("Задан массив: ");
 PrintIntArray(array);
 Console.WriteLine();
-var lowestRow=IndexOfLowestElement(SumOfElementsInEachRow(array))+1;
+var lowestRow=IndexOfLowestElement(SumOfElementsInEachRow(array))+1; //Для пользователя вывожу не индекс строки, а номер строки
 Console.WriteLine($"Строка с наименьшей суммой элментов это строка под номером: {lowestRow}");
