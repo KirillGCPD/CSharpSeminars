@@ -53,11 +53,22 @@ int [] SumOfElementsInEachRow(int [,] array)
     }
     return result;
 }
+//Индекс наименьшего элемента
 int IndexOfLowestElement(int [] array)
 {
-    
+    int result=0;
+    for ( int i=1 ;i<array.Length;i++)
+    {
+        if (array[i]<array[result])
+        {
+            result=i;
+        }
+    }
+    return result;
 }
-var array=GenerateRandomArray(5,5,-10,10);
+var array=GenerateRandomArray(5,5,-10,10); //Квадратная матрица с элементами от -10 до 10
 Console.WriteLine("Задан массив: ");
 PrintIntArray(array);
 Console.WriteLine();
+var lowestRow=IndexOfLowestElement(SumOfElementsInEachRow(array))+1;
+Console.WriteLine($"Строка с наименьшей суммой элментов это строка под номером: {lowestRow}");
