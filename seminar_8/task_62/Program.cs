@@ -9,27 +9,39 @@ int [,] GenerateRandomArray(int m, int n)
     int numberOfElements=m*n;
     var result = new int[m,n];
     var count=1;
-    for (int i=0;i<n;i++)
+    int a=0;
+    int b=0;
+    //строка
+    for (int x=0;x<2;x++)
     {
-        result[0,i]=count;
-        count++;
+        for (int i=0+a;i<n;i++)
+        {
+            result[0+a,i]=count;
+            count++;
+        }
+    //правый
+         for (int j=1;j<m-b;j++)
+         {
+             result[j+b,n-1]=count;
+             count++;
+         }
+     //нижний
+         for (int i=n-2;i>=a;i--)
+         {
+             result[m-1,i]=count;
+             count++;
+         }
+     //Левый
+         for (int j=m-2;j>b;j--)
+         {
+             result[j,0+b]=count;
+             count++;
+         }
+    n--;
+    m--;
+    a++;
+    b++;
     }
-    for (int j=1;j<m;j++)
-    {
-        result[j,n-1]=count;
-        count++;
-    }
-      for (int i=n-2;i>=0;i--)
-    {
-        result[m-1,i]=count;
-        count++;
-    }
-    for (int j=m-2;j>0;j--)
-    {
-        result[j,0]=count;
-        count++;
-    }
-  
     return result;
 }
 
