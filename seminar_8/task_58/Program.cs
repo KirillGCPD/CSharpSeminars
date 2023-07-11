@@ -65,7 +65,7 @@ int[,] MultiplicateMatrix(int[,] firstMatrix, int[,] secondMatrix)
 //---//
 Console.WriteLine("Программа генерирует две матрицы, заданных размеров, которые могут быть умножены друг на друга. И производит их умножение");
 var m=ReadInt("Введите количество строк первой матрицы: ");
-var n=ReadInt("Введите количество столбцов второй матрицы: ");
+var n=ReadInt("Введите количество столбцов матрицы: ");
 
 var firstMatrix=GenerateRandomArray(m,n,-10,10);
 var secondMatrix=GenerateRandomArray(n,m,-10,10); //Будут сгенерированы две матрицы способные умножаться
