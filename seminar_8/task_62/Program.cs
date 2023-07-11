@@ -12,35 +12,48 @@ int [,] GenerateRandomArray(int m, int n)
     int a=0;
     int b=0;
     //строка
-    for (int x=0;x<2;x++)
+    while (count<=numberOfElements) //Немного не оптимальный вариант за счет этих проверок. Можно оптимизировать количество лишних прогонов в которые ничего не происходит
     {
+        
         for (int i=0+a;i<n;i++)
         {
+            if (count<=numberOfElements) //Защита от перезаписи когда мы делаем лишний прогон. По хорошему надо просто вовремя остановиться
+            {
             result[0+a,i]=count;
+            }
             count++;
         }
     //правый
          for (int j=1;j<m-b;j++)
          {
+             if (count<=numberOfElements)
+            {
              result[j+b,n-1]=count;
+            }
              count++;
          }
      //нижний
          for (int i=n-2;i>=a;i--)
          {
+             if (count<=numberOfElements)
+            {
              result[m-1,i]=count;
+            }
              count++;
          }
      //Левый
          for (int j=m-2;j>b;j--)
          {
+             if (count<=numberOfElements)
+            {
              result[j,0+b]=count;
+            }
              count++;
          }
-    n--;
-    m--;
-    a++;
-    b++;
+        n--;
+        m--;
+        a++;
+        b++;
     }
     return result;
 }
